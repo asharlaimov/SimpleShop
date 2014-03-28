@@ -29,5 +29,5 @@ Please feel free to use a different markup language if you do not plan to run
 
 1. git clone git@github.com:asharlaimov/SimpleShop.git
 2. rails new SimpleShop
-3. rake db:migrate
+3. rake db:migrate rake db:rollback
 4. rake db:seed
