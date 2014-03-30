@@ -11,4 +11,6 @@ class Product < ActiveRecord::Base
   def self.latest
     Product.order(:updated_at).last
   end
+
+  default_scope order('created_at DESC')
 end
