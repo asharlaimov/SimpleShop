@@ -41,3 +41,7 @@ Ctrl + Alt + L       Reformat code
 
 How key-based cache expiration works
 http://signalvnoise.com/posts/3113-how-key-based-cache-expiration-works
+
+rails generate scaffold Order name address:text email pay_type
+rails generate migration add_order_to_line_item order:references
+rake db:migrate
