@@ -32,6 +32,7 @@ Please feel free to use a different markup language if you do not plan to run
 3. rake db:migrate rake db:rollback
 4. rake db:seed
 5. rails generate scaffold Product title:string description:text image_url:string price:decimal
+6. rails generate mailer OrderNotifier received shipped
 
 
 Ctrl + Q             Quick documentation lookup

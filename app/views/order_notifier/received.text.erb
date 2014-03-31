@@ -1,0 +1,7 @@
+Dear <%= @order.name %>
+
+You have ordered following products:
+
+<%= render @order.line_items -%>
+
+We will notify you when your order has been sent
