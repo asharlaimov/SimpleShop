@@ -1,10 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
   name: Dave Thomas
   address: MyText
   email: dave@example.org
   pay_type: Check
+=======
+  name: MyString
+  address: MyText
+  email: MyString
+  pay_type: MyString
+>>>>>>> origin/master
 
 two:
   name: MyString
