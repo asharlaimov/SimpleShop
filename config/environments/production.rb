@@ -71,7 +71,7 @@ SimpleShop::Application.configure do
       domain: "domain.of.sender.net",
       authentication: "plain",
       user_name: "asharlaimov",
-      password: "sgnllsamail",
+      password: "pass",
       enable_starttls_auto: true
   }
 

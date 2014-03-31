@@ -29,10 +29,11 @@ Please feel free to use a different markup language if you do not plan to run
 
 1. git clone git@github.com:asharlaimov/SimpleShop.git
 2. rails new SimpleShop
-3. rake db:migrate rake db:rollback
+3. rake db:migrate RAILS_ENV=production rake db:rollback
 4. rake db:seed
 5. rails generate scaffold Product title:string description:text image_url:string price:decimal
 6. rails generate mailer OrderNotifier received shipped
+7. rails generate integration_test user_stories
 
 
 Ctrl + Q             Quick documentation lookup
@@ -46,3 +47,10 @@ http://signalvnoise.com/posts/3113-how-key-based-cache-expiration-works
 rails generate scaffold Order name address:text email pay_type
 rails generate migration add_order_to_line_item order:references
 rake db:migrate
+
+heroku login
+git remote add heroku git@heroku.com:training-simple-shop.git
+heroku run rake db:migrate RAILS_ENV=production
+heroku logs
+git push heroku master
+heroku addons:add heroku-postgresql
