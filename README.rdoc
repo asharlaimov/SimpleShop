@@ -55,3 +55,4 @@ heroku run rake db:migrate RAILS_ENV=production
 heroku logs
 git push heroku master
 heroku addons:add heroku-postgresql
+heroku push   https://github.com/ddollar/heroku-push
