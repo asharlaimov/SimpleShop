@@ -10,12 +10,12 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to admin_url
     else
-      redirect_to login_url, alert: "Неверная комбинация имени и пароля"
+      redirect_to login_url, alert: 'Invalid user or password'
     end
   end
-end
 
-def destroy
-  session[:user_id] = nil
-  redirect_to store_url, notice: "Сеанс работы завершен"
+  def destroy
+    session[:user_id] = nil
+    redirect_to store_url, notice: 'Logged out'
+  end
 end
