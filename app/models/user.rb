@@ -9,3 +9,6 @@ class User < ActiveRecord::Base
     end
   end
 end
+
+# https://github.com/codahale/bcrypt-ruby
+# https://gist.github.com/mpakus/7141452

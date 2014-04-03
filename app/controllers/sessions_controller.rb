@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   def new
   end
 
-  def create
+  def create # post login and password
     user = User.find_by(name: params[:name])
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destroy
+  def destroy # logout
     session[:user_id] = nil
     redirect_to store_url, notice: 'Logged out'
   end
