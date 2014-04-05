@@ -5,4 +5,10 @@ module ApplicationHelper
     end
     content_tag("div", attributes, &block)
   end
+
+  def render_notice(msg = notice)
+    if msg
+      content_tag :p, msg.to_s, :id => 'notice'
+    end
+  end
 end
