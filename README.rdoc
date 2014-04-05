@@ -48,6 +48,7 @@ http://signalvnoise.com/posts/3113-how-key-based-cache-expiration-works
 rails generate scaffold Order name address:text email pay_type
 rails generate migration add_order_to_line_item order:references
 rake db:migrate
+rails generate scaffold Category
 
 heroku login
 git remote add heroku git@heroku.com:training-simple-shop.git
@@ -56,3 +57,4 @@ heroku logs
 git push heroku master
 heroku addons:add heroku-postgresql
 heroku push   https://github.com/ddollar/heroku-push
+revert: git revert 364705c     git push     "type :quit<Enter> to quit VIM"

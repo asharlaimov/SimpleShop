@@ -14,8 +14,14 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 # encoding: utf-8
+User.delete_all
+User.create(name: 'admin', password: 'admin', password_confirmation: 'admin')
+
+Category.delete_all
+category = Category.create!(name: 'Ruby')
+
 Product.delete_all
-Product.create!(title: 'CoffeeScript',
+Product.create!(title: 'CoffeeScript', category: category,
                 description:
                     %{<p>
         CoffeeScript is JavaScript done right. It provides all of JavaScript's
@@ -27,7 +33,7 @@ Product.create!(title: 'CoffeeScript',
                 image_url: 'cs.jpg',
                 price: 36.00)
 # . . .
-Product.create!(title: 'Programming Ruby 1.9 & 2.0',
+Product.create!(title: 'Programming Ruby 1.9 & 2.0', category: category,
                 description:
                     %{<p>
         Ruby is the fastest growing and most exciting dynamic language
@@ -38,7 +44,7 @@ Product.create!(title: 'Programming Ruby 1.9 & 2.0',
                 price: 49.95)
 # . . .
 
-Product.create!(title: 'Rails Test Prescriptions',
+Product.create!(title: 'Rails Test Prescriptions', category: category,
                 description:
                     %{<p>
         <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
