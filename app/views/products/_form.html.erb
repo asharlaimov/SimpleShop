@@ -12,6 +12,11 @@
     <% end %>
 
     <div class="field">
+      <%= f.label :category %>
+      <br>
+      <%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true %>
+    </div>
+    <div class="field">
       <%= f.label :title %>
       <br>
       <%= f.text_field :title %>
