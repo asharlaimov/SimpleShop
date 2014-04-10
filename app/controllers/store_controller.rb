@@ -4,6 +4,10 @@ class StoreController < ApplicationController
   skip_before_action :authorize
 
   def index
-    @products = Product.order(:title)
+    if params[:filter]
+      @products = Product.where(:category_id => params[:filter])
+    else
+      @products = Product.all
+    end
   end
 end
