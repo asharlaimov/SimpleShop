@@ -117,7 +117,8 @@
 table.SimpleTable {
   border-collapse: collapse;
   border-spacing: 0;
-  width: 600px;
+  max-width: 1000px;
+  min-width: 200px;
   height: 100%;
   margin: 5px;
   padding: 5px;
@@ -151,6 +152,6 @@ table.SimpleTable {
   }
 
   .actions {
-    width: 30%;
+    width: 10em;
   }
 }

@@ -18,8 +18,8 @@
         <td><%= order.address %></td>
         <td><%= order.email %></td>
         <td><%= order.pay_type %></td>
-        <td>
-          <%= link_to 'Show', order %>
+        <td class='actions'>
+        <%= link_to 'Show', order %>
           <%= link_to 'Edit', edit_order_path(order) %>
           <%= link_to 'Destroy', order, method: :delete, data: {confirm: 'Are you sure?'} %>
         </td>
@@ -28,7 +28,6 @@
   </tbody>
 </table>
 
-<br>
+<p><%= paginate @orders %></p>
 
 <%= link_to 'New Order', new_order_path %>
-<p><%= paginate @orders %></p>

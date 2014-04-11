@@ -24,5 +24,7 @@
       </tr>
   <% end %>
 </table>
-<br/>
+
+<p><%= paginate @products %></p>
+
 <%= link_to 'New product', new_product_path %>
