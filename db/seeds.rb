@@ -19,6 +19,8 @@ User.create(name: 'admin', password: 'admin', password_confirmation: 'admin')
 
 Category.delete_all
 category = Category.create!(name: 'Ruby')
+Category.create!(name: 'Java')
+Category.create!(name: 'Php')
 
 Product.delete_all
 Product.create!(title: 'CoffeeScript', category: category,
