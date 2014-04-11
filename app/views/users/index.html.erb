@@ -11,8 +11,8 @@
 
   <tbody>
   <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <td><%= user.name %></td>
         <td class="actions">
           <%= link_to 'Show', user %>
           <%= link_to 'Edit', edit_user_path(user) %>

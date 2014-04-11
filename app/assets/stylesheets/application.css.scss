@@ -118,7 +118,7 @@ table.SimpleTable {
   border-collapse: collapse;
   border-spacing: 0;
   max-width: 1000px;
-  min-width: 200px;
+  min-width: 300px;
   height: 100%;
   margin: 5px;
   padding: 5px;
@@ -145,13 +145,20 @@ table.SimpleTable {
 
   td {
     border-width: 1px;
-    padding: 5px;
+    padding: 4px;
     border-style: inset;
     border-color: gray;
-    background-color: white;
   }
 
   .actions {
     width: 10em;
+  }
+
+  .list_line_even {
+    background: #e0f8f8;
+  }
+
+  .list_line_odd {
+    background: #f6ffbd;
   }
 }

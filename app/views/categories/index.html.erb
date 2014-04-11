@@ -12,8 +12,8 @@
 
   <tbody>
   <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <td><%= category.name %></td>
         <td class="actions">
           <%= link_to 'Show', category %>
           <%= link_to 'Edit', edit_category_path(category) %>
