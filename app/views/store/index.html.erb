@@ -7,7 +7,6 @@
       <%= check_box_for_filter category.id, :class => "filter", :onchange => 'this.form.submit()' %>
       <span class='selectable'><%= category.name %></span>
   <% end %>
-  <!--<input type="submit" value="Filter"/>-->
 </form>
 
 <% cache ['store', Product.latest] do %>
@@ -18,7 +17,6 @@
               <h3><%= product.title %></h3>
               <%= sanitize(product.description) %>
               <div class="price_line">
-                <!--<span class="price"><%= sprintf("$%0.02f", product.price) %></span>-->
                 <span class="price"><%= number_to_currency(product.price) %></span>
                 <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
               </div>

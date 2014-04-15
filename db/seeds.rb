@@ -22,6 +22,7 @@ category = Category.create!(name: 'Ruby')
 Category.create!(name: 'Java')
 Category.create!(name: 'Php')
 
+Recommended.delete_all
 Product.delete_all
 Product.create!(title: 'CoffeeScript', category: category,
                 description:
@@ -35,20 +36,20 @@ Product.create!(title: 'CoffeeScript', category: category,
                 image_url: 'cs.jpg',
                 price: 36.00)
 # . . .
-Product.create!(title: 'Programming Ruby 1.9 & 2.0', category: category,
-                description:
-                    %{<p>
+product1 = Product.create!(title: 'Programming Ruby 1.9 & 2.0', category: category,
+                           description:
+                               %{<p>
         Ruby is the fastest growing and most exciting dynamic language
         out there. If you need to get working programs delivered fast,
         you should add Ruby to your toolbox.
       </p>},
-                image_url: 'ruby.jpg',
-                price: 49.95)
+                           image_url: 'ruby.jpg',
+                           price: 49.95)
 # . . .
 
-Product.create!(title: 'Rails Test Prescriptions', category: category,
-                description:
-                    %{<p>
+product2 =Product.create!(title: 'Rails Test Prescriptions', category: category,
+                          description:
+                              %{<p>
         <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
         Rails applications, covering Test-Driven Development from both a
         theoretical perspective (why to test) and from a practical perspective
@@ -56,5 +57,13 @@ Product.create!(title: 'Rails Test Prescriptions', category: category,
         procedures for Rails 2 and Rails 3, and introduces popular add-ons,
         including Cucumber, Shoulda, Machinist, Mocha, and Rcov.
       </p>},
-                image_url: 'rtp.jpg',
-                price: 34.95)
+                          image_url: 'rtp.jpg',
+                          price: 34.95)
+
+rec1 = Recommended.new(position: 2)
+product1.recommended = rec1
+rec1.save!
+
+rec2 = Recommended.new(position: 1)
+product2.recommended = rec2
+rec2.save!

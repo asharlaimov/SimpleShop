@@ -21,6 +21,11 @@ SimpleShop::Application.routes.draw do
   get "store/index"
   resources :products
 
+  get "recommendeds/index"
+  post "recommendeds/sort" => 'recommendeds#sort', as: :sort_rec
+  post "recommendeds/add/:id" => 'recommendeds#add', as: :add_rec
+  delete "recommendeds/destroy/:id" => 'recommendeds#destroy', as: :del_rec
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,34 @@
+// Place all the styles related to the Recommendeds controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#sortable {
+  width: 50em;
+  padding: 0px;
+  list-style: none;
+
+  .ui-state-highlight {
+    background-color: #DADADA;
+    height: 8em;
+  }
+
+  li {
+    cursor: pointer;
+    padding: 3px;
+  }
+
+  .list_image {
+
+    height: 8em;
+    position: relative;
+  }
+  span {
+    position: relative;
+    top: -7em;
+    left: 20px;
+  }
+
+  a {
+
+  }
+}
