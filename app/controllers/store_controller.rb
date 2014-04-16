@@ -1,6 +1,7 @@
 class StoreController < ApplicationController
   include CurrentCart
-  before_action :set_cart
+  include CurrentRecommended
+  before_action :set_cart, :set_recommendeds
   skip_before_action :authorize
 
   def index

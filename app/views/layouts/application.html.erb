@@ -19,13 +19,6 @@
         <% end %>
     <% end %>
 
-    <ul>
-      <li><a href="http://www....">Home</a></li>
-      <li><a href="http://www..../faq">Questions</a></li>
-      <li><a href="http://www..../news">News</a></li>
-      <li><a href="http://www..../contact">Contact</a></li>
-    </ul>
-
     <% if session[:user_id] %>
         <ul>
           <li><%= link_to 'Store', store_path %></li>
@@ -43,6 +36,12 @@
   </div>
   <div id="main">
     <%= yield %>
+  </div>
+  <div id="recommended">
+    <% if @recommendeds && @recommendeds.any? %>
+        <h3>Recommended items:</h3>
+        <%= render @recommendeds %>
+    <% end %>
   </div>
 </div>
 </body>

@@ -1,4 +1,6 @@
 class RecommendedsController < ApplicationController
+  include CurrentCart
+  before_action :set_cart
 
   # GET /recommendeds
   # GET /recommendeds.json

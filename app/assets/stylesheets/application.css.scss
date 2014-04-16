@@ -35,16 +35,35 @@
 }
 
 #columns {
+  //parent
+  position: relative;
+  width: 100%;
   background: #141;
 
   #main {
+    //center
+    position: absolute;
+    display: block;
     margin-left: 18em;
+    margin-right: 18em;
     padding: 1em;
     background: white;
   }
 
+  #recommended {
+    //right
+    position: absolute;
+    left: auto;
+    right: 0px;
+    display: block;
+    width: 18em;
+    background-color: #ffffff;
+  }
+
   #side {
-    float: left;
+    //left
+    position: absolute;
+    display: block;
     padding: 1em 2em;
     width: 14em;
     background: #141;
@@ -162,4 +181,10 @@ table.SimpleTable {
   .list_line_odd {
     background: #f6ffbd;
   }
+}
+
+.price {
+  color: #44a;
+  font-weight: bold;
+  margin-right: 3em;
 }

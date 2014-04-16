@@ -52,3 +52,40 @@
     left: 8em;
   }
 }
+
+.recommended_item {
+  position: relative;
+  margin: 8px;
+  width: 16em;
+  height: 20em;
+  border: 1px solid lightGrey;
+  background-color: #99cc99;
+  box-shadow: 0 1px 4px #4F497A;
+
+  .list_image {
+    height: 14em;
+    position: absolute;
+    left: 1em;
+    top: 3em;
+    border: 1px solid lightGrey;
+  }
+
+  .title {
+    position: absolute;
+    top: 1em;
+    left: 0.5em;
+    font-weight: bold;
+  }
+
+  .rec_add_to_cart {
+    position: absolute;
+    top: 17em;
+    left: 6em;
+  }
+
+  .price {
+    position: absolute;
+    top: 17.5em;
+    left: 1em;
+  }
+}
