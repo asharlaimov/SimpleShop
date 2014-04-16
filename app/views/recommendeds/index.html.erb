@@ -6,7 +6,8 @@
   <% @recommendeds.each do |recommended| %>
       <li id="recommended_<%= recommended.id %>">
         <%= image_tag(recommended.product.image_url, class: 'list_image') %>
-        <span><%= recommended.product.title %></span>
+        <span class="title"><%= recommended.product.title %></span>
+        <span class="description"><%= truncate(strip_tags(recommended.product.description), length: 300) %></span>
         <%= link_to 'Remove from recomended', del_rec_url(recommended), method: :delete, data: {confirm: 'Are you sure?'} %>
       </li>
   <% end %>

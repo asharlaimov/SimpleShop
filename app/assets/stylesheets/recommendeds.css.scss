@@ -16,26 +16,39 @@
     height: 9em;
     cursor: pointer;
     padding: 3px;
+    margin: 9px;
     position: relative;
+    border: 1px solid lightGrey;
+    background-color: #99cc99;
+    box-shadow: 0 1px 4px #4F497A;
   }
 
   .list_image {
     height: 8em;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 8px;
+    top: 8px;
+    border: 1px solid lightGrey;
   }
 
-  span {
+  .title {
     position: absolute;
     top: 3px;
-    left: 100px;
+    left: 8em;
+    font-weight: bold;
+  }
+
+  .description {
+    position: absolute;
+    top: 2em;
+    left: 8em;
+    height: 2em;
   }
 
   a {
     position: absolute;
     display: block;
-    top: 90px;
-    left: 100px;
+    top: 8em;
+    left: 8em;
   }
 }
