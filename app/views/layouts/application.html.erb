@@ -40,7 +40,13 @@
   <div id="recommended">
     <% if @recommendeds && @recommendeds.any? %>
         <h3>Recommended items:</h3>
-        <%= render @recommendeds %>
+        <% cache ['recommendeds', Recommended.latest, Product.latest] do %>
+            <% @recommendeds.each do |recommended| %>
+                <% cache ['entry', recommended.product] do %>
+                    <%= render recommended.product %>
+                <% end %>
+            <% end %>
+        <% end %>
     <% end %>
   </div>
 </div>

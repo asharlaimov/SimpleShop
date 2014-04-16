@@ -1,0 +1,6 @@
+<div class="recommended_item">
+  <%= image_tag(product.image_url, class: 'list_image') %>
+  <span class="title"><%= truncate(strip_tags(product.title), length: 25) %></span>
+  <%= button_to 'Add to Cart', line_items_path(product_id: product), class: 'rec_add_to_cart', remote: true %>
+  <span class="price"><%= number_to_currency(product.price) %></span>
+</div>
