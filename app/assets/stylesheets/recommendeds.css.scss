@@ -13,22 +13,29 @@
   }
 
   li {
+    height: 9em;
     cursor: pointer;
     padding: 3px;
+    position: relative;
   }
 
   .list_image {
-
     height: 8em;
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
+
   span {
-    position: relative;
-    top: -7em;
-    left: 20px;
+    position: absolute;
+    top: 3px;
+    left: 100px;
   }
 
   a {
-
+    position: absolute;
+    display: block;
+    top: 90px;
+    left: 100px;
   }
 }
