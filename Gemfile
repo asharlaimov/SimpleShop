@@ -58,3 +58,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Useful gem to manage paginated collections
 gem 'kaminari'
+
+# Store sessions in DB
+gem 'activerecord-session_store'

@@ -36,6 +36,7 @@ Please feel free to use a different markup language if you do not plan to run
 7. rails generate integration_test user_stories
 8. rails generate controller Sessions new create destroy
 9. rails generate scaffold Recommended product:has_one index:integer
+10. rails generate active_record:session_migration
 
 
 Ctrl + Q             Quick documentation lookup
