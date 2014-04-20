@@ -4,14 +4,15 @@
       <fieldset>
         <legend>Зарегистрируйтесь, пожалуйста</legend>
         <div>
-          <%= label_tag :name, 'Имя:' %>
+          <%= label_tag :name, 'Login:' %>
           <%= text_field_tag :name, params[:name] %>
         </div>
         <div>
-          <%= label_tag :password, 'Пароль:' %>
+          <%= label_tag :password, 'password:' %>
           <%= password_field_tag :password, params[:password] %>
         </div>
         <div>
+          <%= hidden_field_tag :requested_url, params[:requested_url] %>
           <%= submit_tag "Login" %>
         </div>
       </fieldset>

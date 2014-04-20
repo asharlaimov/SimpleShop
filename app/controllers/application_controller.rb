@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless User.find_by(id: session[:user_id])
-      redirect_to login_url, notice: 'Please login to view requested content'
+      redirect_to login_url(:requested_url => request.fullpath), notice: 'Please login to view requested content'
     end
   end
 end

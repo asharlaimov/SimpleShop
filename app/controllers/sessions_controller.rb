@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
   skip_before_action :authorize
+  include CurrentCart
+  before_action :set_cart
 
   def new
   end
@@ -8,7 +10,11 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:name])
     if user and user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to admin_url
+      if params[:requested_url]
+        redirect_to params[:requested_url]
+      else
+        redirect_to store_path
+      end
     else
       redirect_to login_url, alert: 'Invalid user or password'
     end
