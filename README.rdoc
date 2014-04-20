@@ -60,3 +60,9 @@ git push heroku master
 heroku addons:add heroku-postgresql
 heroku push   https://github.com/ddollar/heroku-push
 revert: git revert 364705c     git push     "type :quit<Enter> to quit VIM"
+
+$global_variable
+@@class_variable
+@instance_variable
+[OtherClass::]CONSTANT
+local_variable

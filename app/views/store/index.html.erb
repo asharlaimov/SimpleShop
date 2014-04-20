@@ -7,9 +7,18 @@
       <%= check_box_for_filter category.id, :class => "filter", :onchange => 'this.form.submit()' %>
       <span class='selectable'><%= category.name %></span>
   <% end %>
+  <br>
+
+  <%= label_tag(:page_size, "page size:") %>
+  <%= select_tag :page_size, options_for_select(page_items_count, @page_size), :onchange => 'this.form.submit()' %>
+  <br>
+
+  <%= label_tag(:query, "Search for:") %>
+  <%= text_field_tag(:query, @query) %>
+  <input type="submit" value="Search">
 </form>
 
-<% cache ['store', Product.latest] do %>
+<% cache ['store', Product.latest, params[:filter].to_s] do %>
     <% @products.each do |product| %>
         <% cache ['entry', product] do %>
             <div class="entry">
@@ -22,5 +31,7 @@
               </div>
             </div>
         <% end %>
-    <% end %>
+    <% end unless @products.nil? %>
 <% end %>
+
+<p><%= paginate @products unless @products.nil? %></p>

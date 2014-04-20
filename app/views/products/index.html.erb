@@ -31,7 +31,7 @@
           <%= link_to 'Destroy', product, method: :delete, data: {confirm: 'Are you sure?'} %>
         </td>
       </tr>
-  <% end %>
+  <% end unless @products.nil? %>
 </table>
 
 <p><%= paginate @products %></p>

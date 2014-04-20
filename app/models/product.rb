@@ -18,6 +18,26 @@ class Product < ActiveRecord::Base
     Product.order(:updated_at).last
   end
 
+  def self.filter_category categories
+    if categories.present?
+      where(:category_id => categories) if categories.present?
+    else
+      all
+    end
+  end
+
+  def self.filter_query query
+    if query.present?
+      where("[title] like ? or [description] like ?", "%#{query}%", "%#{query}%")
+    else
+      all
+    end
+  end
+
+  def self.filter_page page = 1, page_size = 5
+    page(page).per(page_size)
+  end
+
   default_scope order('created_at DESC')
 
   private
