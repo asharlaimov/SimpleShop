@@ -15,7 +15,7 @@
 #---
 # encoding: utf-8
 User.delete_all
-User.create(name: 'admin', password: 'admin', password_confirmation: 'admin')
+User.create(name: 'admin', password: 'admin', password_confirmation: 'admin', admin: true)
 
 Category.delete_all
 category = Category.create!(name: 'Ruby')

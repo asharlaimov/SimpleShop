@@ -7,11 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
+
 <div id="banner">
   <%= image_tag("logo.png") %>
   <%= @page_title || "Simple Shop" %>
 </div>
+
 <div id="columns">
+
   <div id="side">
     <% if @cart %>
         <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
@@ -31,12 +34,14 @@
         <%= button_to 'Logout', logout_path, method: :delete %>
     <% else %>
         <%= button_to 'Login', login_path, method: :get %>
+        <%= button_to 'Register', new_user_url, method: :get %>
     <% end %>
-
   </div>
+
   <div id="main">
     <%= yield %>
   </div>
+
   <div id="recommended">
     <% if @recommendeds && @recommendeds.any? %>
         <h3>Recommended items:</h3>

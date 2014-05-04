@@ -3,7 +3,7 @@
       <% if @user.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@user.errors.count, "error") %>
-              , сведения об этом пользователе не могут быть сохранены:</h2>
+              , prohibited this user from being saved:</h2>
             <ul>
               <% @user.errors.full_messages.each do |msg| %>
                   <li><%= msg %></li>
@@ -17,14 +17,21 @@
           <%= f.label :name, 'Name:' %>
           <%= f.text_field :name, size: 40 %>
         </div>
-        <div class="field">
-          <%= f.label :password, 'Password' %>:
-          <%= f.password_field :password, size: 40 %>
-        </div>
-        <div class="field">
-          <%= f.label :password_confirmation, 'Confirm' %>:
-          <%= f.password_field :password_confirmation, size: 40 %>
-        </div>
+        <% if admin_rights %>
+            <div class="field">
+              <%= f.label :admin, 'admin:' %>
+              <%= f.check_box :admin %>
+            </div>
+        <% else %>
+            <div class="field">
+              <%= f.label :password, 'Password' %>:
+              <%= f.password_field :password, size: 40 %>
+            </div>
+            <div class="field">
+              <%= f.label :password_confirmation, 'Confirm' %>:
+              <%= f.password_field :password_confirmation, size: 40 %>
+            </div>
+        <% end %>
         <div class="actions">
           <%= f.submit %>
         </div>

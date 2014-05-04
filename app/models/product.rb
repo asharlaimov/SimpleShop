@@ -20,7 +20,7 @@ class Product < ActiveRecord::Base
 
   def self.filter_category categories
     if categories.present?
-      where(:category_id => categories) if categories.present?
+      where(:category_id => categories)
     else
       all
     end
