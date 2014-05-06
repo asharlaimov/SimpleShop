@@ -16,9 +16,11 @@
 # encoding: utf-8
 User.delete_all
 User.create(name: 'admin', password: 'admin', password_confirmation: 'admin', admin: true)
+User.create(name: 'user1', password: 'user1', password_confirmation: 'user1', admin: false)
 
 Category.delete_all
 category = Category.create!(name: 'Ruby')
+category2 = Category.create!(name: 'C#')
 Category.create!(name: 'Java')
 Category.create!(name: 'Php')
 
@@ -47,7 +49,7 @@ product1 = Product.create!(title: 'Programming Ruby 1.9 & 2.0', category: catego
                            price: 49.95)
 # . . .
 
-product2 =Product.create!(title: 'Rails Test Prescriptions', category: category,
+product2 = Product.create!(title: 'Rails Test Prescriptions', category: category,
                           description:
                               %{<p>
         <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
@@ -59,6 +61,14 @@ product2 =Product.create!(title: 'Rails Test Prescriptions', category: category,
       </p>},
                           image_url: 'rtp.jpg',
                           price: 34.95)
+
+Product.create!(title: 'CLR via C#', category: category2,
+                description:
+                    %{<p>
+        <em>CLR via C#</em> Программирование на платформе Microsoft .NET Framework 2.0 на языке C#
+      </p>},
+                image_url: 'blank.png',
+                price: 50.01)
 
 rec1 = Recommended.new(position: 2)
 product1.recommended = rec1
