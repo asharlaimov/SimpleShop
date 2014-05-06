@@ -1,21 +1,34 @@
 <%= render_notice %>
 
-<h1>Your Pragmatic Catalog</h1>
+<h2>Your Catalog</h2>
 
-<form class="filter_form" method="get">
-  <% Category.order(:name).each do |category| %>
-      <%= check_box_for_filter category.id, :class => "filter", :onchange => 'this.form.submit()' %>
-      <span class='selectable'><%= category.name %></span>
-  <% end %>
-  <br>
+<form class="simple_shop_form" method="get">
+  <fieldset>
+    <legend>Filter</legend>
+    <div class="filter">
+      <%= label_tag("Categories:") %>
+      <% Category.order(:name).each do |category| %>
+          <%= check_box_for_filter category.id, :class => "filter", :onchange => 'this.form.submit()' %>
+          <span class='selectable'><%= category.name %></span>
+      <% end %>
+    </div>
 
-  <%= label_tag(:page_size, "page size:") %>
-  <%= select_tag :page_size, options_for_select(page_items_count, @page_size), :onchange => 'this.form.submit()' %>
-  <br>
+    <div class="filter">
+      <%= label_tag("Page size:") %>
+      <%= select_tag :page_size, options_for_select(page_items_count, @page_size), :onchange => 'this.form.submit()' %>
+    </div>
 
-  <%= label_tag(:query, "Search for:") %>
-  <%= text_field_tag(:query, @query) %>
-  <input type="submit" value="Search">
+    <div class="filter">
+      <%= label_tag("Sort price:") %>
+      <%= select_tag :price_order, options_for_select(sort_price, @price_order), :onchange => 'this.form.submit()' %>
+    </div>
+
+    <div class="filter">
+      <%= label_tag(:query, "Search for:") %>
+      <%= text_field_tag(:query, @query) %>
+      <input type="submit" value="Search">
+    </div>
+  </fieldset>
 </form>
 
 <% cache ['store', Product.latest, params[:filter].to_s] do %>

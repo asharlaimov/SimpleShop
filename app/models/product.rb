@@ -18,6 +18,10 @@ class Product < ActiveRecord::Base
     Product.order(:updated_at).last
   end
 
+  def self.sort(asc)
+    order(price: asc ? :asc : :desc)
+  end
+
   def self.filter_category categories
     if categories.present?
       where(:category_id => categories)
@@ -37,8 +41,6 @@ class Product < ActiveRecord::Base
   def self.filter_page page = 1, page_size = 5
     page(page).per(page_size)
   end
-
-  default_scope order('created_at DESC')
 
   private
   # убеждаемся в отсутствии товарных позиций, ссылающихся на данный товар
