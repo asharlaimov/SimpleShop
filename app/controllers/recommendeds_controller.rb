@@ -1,6 +1,7 @@
 class RecommendedsController < ApplicationController
   include CurrentCart
   before_action :set_cart
+  before_action :require_admin_rights, except: [:index]
 
   # GET /recommendeds
   # GET /recommendeds.json
