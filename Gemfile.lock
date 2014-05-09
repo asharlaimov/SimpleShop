@@ -40,6 +40,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    daemon_controller (1.2.0)
     erubis (2.7.0)
     execjs (2.0.2)
     hike (1.2.3)
@@ -62,6 +63,10 @@ GEM
     mime-types (1.25.1)
     minitest (4.7.5)
     multi_json (1.9.3)
+    passenger (4.0.42)
+      daemon_controller (>= 1.2.0)
+      rack
+      rake (>= 0.8.1)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -127,6 +132,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   kaminari
+  passenger
   rails (= 4.0.4)
   sass-rails (~> 4.0.2)
   sdoc

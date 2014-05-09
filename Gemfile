@@ -55,3 +55,5 @@ gem 'kaminari'
 
 # Store sessions in DB
 gem 'activerecord-session_store'
+
+gem 'passenger'

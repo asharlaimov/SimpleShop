@@ -17,6 +17,6 @@ class StoreController < ApplicationController
     @query = params[:query]
     @price_order = params[:price_order] || sort_price.first
     @page_size = params[:page_size] || page_items_count.first
-    @products = Product.sort(@price_order == sort_price.first).filter_category(params[:filter]).filter_page(params[:page], @page_size).filter_query @query
+    @products = Product.sort(@price_order == sort_price.first).filter_category(params[:filter]).filter_query(@query).filter_page(params[:page], @page_size)
   end
 end
